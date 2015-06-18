@@ -17,6 +17,7 @@
 		CC1C137D1B31F9CF00F1234A /* checkInTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C137C1B31F9CF00F1234A /* checkInTests.m */; };
 		CC1C13871B31FCA700F1234A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1C13861B31FCA700F1234A /* CoreLocation.framework */; };
 		CC1C138A1B3215B300F1234A /* slackWebhookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C13891B3215B300F1234A /* slackWebhookManager.m */; };
+		CCB368C51B335A89009EA08E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB368C41B335A89009EA08E /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CC1C13861B31FCA700F1234A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CC1C13881B3215B300F1234A /* slackWebhookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slackWebhookManager.h; sourceTree = "<group>"; };
 		CC1C13891B3215B300F1234A /* slackWebhookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = slackWebhookManager.m; sourceTree = "<group>"; };
+		CCB368C41B335A89009EA08E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB368C51B335A89009EA08E /* MapKit.framework in Frameworks */,
 				CC1C13871B31FCA700F1234A /* CoreLocation.framework in Frameworks */,
 				C01DF0A92945D2CA1A652F46 /* libPods-checkIn.a in Frameworks */,
 			);
@@ -74,6 +77,7 @@
 		B37B09E6B7BF48C9D9A7A17D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCB368C41B335A89009EA08E /* MapKit.framework */,
 				C3E0AC8DA8FC31549736F5E9 /* libPods-checkIn.a */,
 			);
 			name = Frameworks;
