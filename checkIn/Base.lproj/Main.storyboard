@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,114 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zd-Ok-dc7">
+                                <rect key="frame" x="245" y="285" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Monitoring">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="monitorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZ2-2D-uFR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-Vm-Jh9">
+                                <rect key="frame" x="234" y="116" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh7-se-FRe">
+                                <rect key="frame" x="234" y="145" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w8-tA-riN">
+                                <rect key="frame" x="234" y="174" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKx-Xb-R0v">
+                                <rect key="frame" x="310" y="116" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-6T-ZLE">
+                                <rect key="frame" x="324" y="146" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWf-Qr-tRd">
+                                <rect key="frame" x="310" y="174" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="den-Jx-BL5">
+                                <rect key="frame" x="245" y="323" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Stop Monitoring">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="monitorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GiG-SV-3IW"/>
+                                    <action selector="stopMonitorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXk-cu-zEX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xKx-Xb-R0v" firstAttribute="leading" secondItem="gh6-Vm-Jh9" secondAttribute="trailing" constant="8" id="1HM-xR-Xcv"/>
+                            <constraint firstAttribute="centerX" secondItem="rh7-se-FRe" secondAttribute="centerX" constant="158" id="6Hj-z2-hof"/>
+                            <constraint firstAttribute="centerX" secondItem="4w8-tA-riN" secondAttribute="centerX" constant="32" id="6Sm-wf-gbJ"/>
+                            <constraint firstItem="gh6-Vm-Jh9" firstAttribute="top" secondItem="gWf-Qr-tRd" secondAttribute="top" constant="98" id="7GY-Qe-Hbh"/>
+                            <constraint firstAttribute="centerX" secondItem="0Zd-Ok-dc7" secondAttribute="centerX" constant="-0.5" id="8Nu-ON-t5a"/>
+                            <constraint firstAttribute="centerY" secondItem="0Zd-Ok-dc7" secondAttribute="centerY" id="Cxl-KR-5Sr"/>
+                            <constraint firstItem="4w8-tA-riN" firstAttribute="top" secondItem="gWf-Qr-tRd" secondAttribute="top" id="I2P-Oo-PkJ"/>
+                            <constraint firstItem="den-Jx-BL5" firstAttribute="centerX" secondItem="0Zd-Ok-dc7" secondAttribute="centerX" id="LgB-Y9-Bwc"/>
+                            <constraint firstItem="xKx-Xb-R0v" firstAttribute="top" secondItem="gh6-Vm-Jh9" secondAttribute="top" id="M9Y-z0-m5S"/>
+                            <constraint firstAttribute="centerY" secondItem="rh7-se-FRe" secondAttribute="centerY" constant="163.5" id="Quj-Hd-3E1"/>
+                            <constraint firstAttribute="centerX" secondItem="rh7-se-FRe" secondAttribute="centerX" constant="25" id="SDe-bI-83h"/>
+                            <constraint firstAttribute="centerX" secondItem="gh6-Vm-Jh9" secondAttribute="centerX" constant="165" id="Wpa-ql-lLB"/>
+                            <constraint firstItem="den-Jx-BL5" firstAttribute="top" secondItem="0Zd-Ok-dc7" secondAttribute="bottom" constant="8" id="YjX-jb-rlC"/>
+                            <constraint firstAttribute="centerY" secondItem="4w8-tA-riN" secondAttribute="centerY" constant="115.5" id="Z2O-8M-rIg"/>
+                            <constraint firstAttribute="centerY" secondItem="gh6-Vm-Jh9" secondAttribute="centerY" constant="192.5" id="aBj-Bk-ZPV"/>
+                            <constraint firstItem="5Lf-6T-ZLE" firstAttribute="top" secondItem="rh7-se-FRe" secondAttribute="top" constant="1" id="bYU-iF-1jl"/>
+                            <constraint firstItem="5Lf-6T-ZLE" firstAttribute="leading" secondItem="rh7-se-FRe" secondAttribute="trailing" constant="8" id="g6K-Pa-3KV"/>
+                            <constraint firstAttribute="centerX" secondItem="gh6-Vm-Jh9" secondAttribute="centerX" constant="32" id="hCv-a9-ihI"/>
+                            <constraint firstAttribute="centerY" secondItem="gh6-Vm-Jh9" secondAttribute="centerY" constant="173.5" id="qmX-V3-FTl"/>
+                            <constraint firstAttribute="centerX" secondItem="4w8-tA-riN" secondAttribute="centerX" constant="165" id="rGh-fg-q33"/>
+                            <constraint firstItem="gWf-Qr-tRd" firstAttribute="leading" secondItem="4w8-tA-riN" secondAttribute="trailing" constant="8" id="ywZ-Tq-Wwj"/>
+                            <constraint firstAttribute="centerY" secondItem="4w8-tA-riN" secondAttribute="centerY" constant="134.5" id="zHA-lq-7nf"/>
+                            <constraint firstAttribute="centerY" secondItem="rh7-se-FRe" secondAttribute="centerY" constant="144.5" id="ziH-RT-vcR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7GY-Qe-Hbh"/>
+                                <exclude reference="Wpa-ql-lLB"/>
+                                <exclude reference="aBj-Bk-ZPV"/>
+                                <exclude reference="6Hj-z2-hof"/>
+                                <exclude reference="Quj-Hd-3E1"/>
+                                <exclude reference="rGh-fg-q33"/>
+                                <exclude reference="zHA-lq-7nf"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="addressValueLabel" destination="gWf-Qr-tRd" id="EZr-sd-DME"/>
+                        <outlet property="latitudeValueLabel" destination="xKx-Xb-R0v" id="asd-Xl-lqm"/>
+                        <outlet property="longitudeValueLabel" destination="5Lf-6T-ZLE" id="89U-hU-HVB"/>
+                        <outlet property="monitorButton" destination="0Zd-Ok-dc7" id="dYm-QW-6Am"/>
+                        <outlet property="stopMonitorButton" destination="den-Jx-BL5" id="dIb-KE-6Il"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="78" y="470"/>
         </scene>
     </scenes>
 </document>

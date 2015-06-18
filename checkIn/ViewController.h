@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *monitorButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopMonitorButton;
 
-
+@property (weak, nonatomic) IBOutlet UILabel *latitudeValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *longitudeValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressValueLabel;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 
