@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface slackWebhookManager : NSObject
++ (instancetype)sharedManager;
+- (void) postToSlackWithMessage: (NSString *)message success:(void (^)(BOOL success))success failure:(void (^)(NSError *error))failure;
 
 @end

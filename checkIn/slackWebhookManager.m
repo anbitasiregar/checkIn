@@ -7,6 +7,7 @@
 //
 
 #import "slackWebhookManager.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation slackWebhookManager
 
@@ -21,13 +22,19 @@
     return shared;
 }
 
-- (void) postToSlackWithMessage: (NSString *)message {
-    NSString *urlString = @"https://slack.com/api/POST";
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:urlString]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+- (void) postToSlackWithMessage: (NSString *)message success:(void (^)(BOOL success))success failure:(void (^)(NSError *error))failure {
+    NSDictionary *parameters = @{@"text": message, @"username":@"anbitasiregar"};
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager POST:@"https://hooks.slack.com/services/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" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success!");
+        success(YES);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
 }
 
 @end
