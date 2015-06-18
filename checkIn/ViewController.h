@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *monitorButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopMonitorButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end
-

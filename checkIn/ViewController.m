@@ -21,7 +21,7 @@
 
     self.monitorButton.layer.cornerRadius = 5;
     self.monitorButton.layer.masksToBounds = YES;
-    self.titleLabel.adjustsFontSizeToFitWidth = YES;
+    self.stopMonitorButton.hidden = YES;
     
     self.monitoredRegion = [[CLCircularRegion alloc] initWithCenter:CLLocationCoordinate2DMake(42.36723809, -71.08061388) radius:100 identifier:@"test"];
     self.locationManager = [[CLLocationManager alloc] init];
@@ -36,10 +36,15 @@
 - (IBAction)monitorButtonPressed:(UIButton *)sender {
     [self.locationManager startMonitoringForRegion:self.monitoredRegion];
     NSLog(@"Started monitoring");
+    [self.monitorButton setTitle:@"Monitoring..." forState:UIControlStateNormal];
+    self.stopMonitorButton.hidden = NO;
 }
 - (IBAction)stopMonitorButtonPressed:(UIButton *)sender {
     [self.locationManager stopMonitoringForRegion:self.monitoredRegion];
     NSLog(@"Stopped monitoring");
+    [self.monitorButton setTitle:@"Start Monitoring" forState:UIControlStateNormal];
+    self.questionLabel.text = @"";
+    self.stopMonitorButton.hidden = YES;
 }
 
 #pragma mark - CLLocationManager Delegates
@@ -52,6 +57,7 @@
     NSLog(@"I'm here!");
     [[slackWebhookManager sharedManager] postToSlackWithMessage:@"I'm hereeeee!!!!" success:^(BOOL success) {
         NSLog(@"Success? %d", success);
+        self.questionLabel.text = @"YEP";
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -59,8 +65,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"I'm not here!");
-    [[slackWebhookManager sharedManager] postToSlackWithMessage:@"Bye felicia" success:^(BOOL success) {
+    [[slackWebhookManager sharedManager] postToSlackWithMessage:@"I'm not here ):" success:^(BOOL success) {
         NSLog(@"Success? %d", success);
+        self.questionLabel.text = @"NOPE";
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
     }];
